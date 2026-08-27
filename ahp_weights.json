@@ -1,0 +1,88 @@
+{
+  "kriteria": [
+    "harga",
+    "lokasi",
+    "aksesibilitas",
+    "fasilitas",
+    "luas_bangunan",
+    "kategori_pekerjaan"
+  ],
+  "segmen": {
+    "umum": {
+      "urutan_prioritas": [
+        "harga",
+        "lokasi",
+        "aksesibilitas",
+        "fasilitas",
+        "luas_bangunan",
+        "kategori_pekerjaan"
+      ],
+      "bobot": {
+        "harga": 0.36,
+        "lokasi": 0.24,
+        "aksesibilitas": 0.16,
+        "fasilitas": 0.12,
+        "luas_bangunan": 0.08,
+        "kategori_pekerjaan": 0.04
+      },
+      "consistency_ratio": 0.0
+    },
+    "buruh": {
+      "urutan_prioritas": [
+        "harga",
+        "lokasi",
+        "aksesibilitas",
+        "fasilitas",
+        "luas_bangunan",
+        "kategori_pekerjaan"
+      ],
+      "bobot": {
+        "harga": 0.36,
+        "lokasi": 0.24,
+        "aksesibilitas": 0.16,
+        "fasilitas": 0.12,
+        "luas_bangunan": 0.08,
+        "kategori_pekerjaan": 0.04
+      },
+      "consistency_ratio": 0.0
+    },
+    "asn": {
+      "urutan_prioritas": [
+        "lokasi",
+        "harga",
+        "aksesibilitas",
+        "fasilitas",
+        "luas_bangunan",
+        "kategori_pekerjaan"
+      ],
+      "bobot": {
+        "harga": 0.24,
+        "lokasi": 0.36,
+        "aksesibilitas": 0.16,
+        "fasilitas": 0.12,
+        "luas_bangunan": 0.08,
+        "kategori_pekerjaan": 0.04
+      },
+      "consistency_ratio": 0.0
+    },
+    "pengusaha": {
+      "urutan_prioritas": [
+        "aksesibilitas",
+        "harga",
+        "lokasi",
+        "fasilitas",
+        "luas_bangunan",
+        "kategori_pekerjaan"
+      ],
+      "bobot": {
+        "harga": 0.24,
+        "lokasi": 0.16,
+        "aksesibilitas": 0.36,
+        "fasilitas": 0.12,
+        "luas_bangunan": 0.08,
+        "kategori_pekerjaan": 0.04
+      },
+      "consistency_ratio": 0.0
+    }
+  }
+}
