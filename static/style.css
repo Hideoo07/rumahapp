@@ -1,0 +1,332 @@
+/* ==========================================================================
+   Rekomendasi Rumah — "Blueprint / Kartu Survei" design system
+   ========================================================================== */
+
+:root {
+  --blueprint: #1B3A4B;
+  --blueprint-soft: #22485D;
+  --paper: #F7F5EF;
+  --paper-raised: #FFFFFF;
+  --brass: #B8863B;
+  --brass-deep: #9C6F2C;
+  --line: #C9D3D1;
+  --ink: #1E2A2E;
+  --ink-soft: #4A5D63;
+  --approve: #3F6B4F;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+/* -------------------------------------------------------------------- */
+/* Header band with blueprint grid motif                                */
+/* -------------------------------------------------------------------- */
+
+.bp-header {
+  background: var(--blueprint);
+  background-image:
+    linear-gradient(var(--blueprint-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-soft) 1px, transparent 1px);
+  background-size: 28px 28px;
+  border-radius: 14px 14px 0 0;
+  padding: 2.25rem 2.25rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.bp-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27,58,75,0.15) 0%, rgba(27,58,75,0.85) 100%);
+  pointer-events: none;
+}
+
+.bp-header > * { position: relative; z-index: 1; }
+
+.bp-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C9D9CE;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bp-eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--brass);
+  display: inline-block;
+}
+
+.bp-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.85rem;
+  color: #fff;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.bp-subtitle {
+  font-family: var(--font-body);
+  color: #CBD8DC;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------- */
+/* Card shell                                                            */
+/* -------------------------------------------------------------------- */
+
+.bp-card-shell {
+  background: var(--paper-raised);
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(27,58,75,0.04), 0 12px 32px -16px rgba(27,58,75,0.18);
+  overflow: hidden;
+}
+
+.bp-form-body { padding: 2.25rem; }
+
+/* -------------------------------------------------------------------- */
+/* Form styling                                                          */
+/* -------------------------------------------------------------------- */
+
+.bp-section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass-deep);
+  margin: 1.75rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+.bp-section-label:first-of-type { margin-top: 0.25rem; }
+
+.bp-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 0.35rem;
+}
+
+.bp-field .form-control,
+.bp-field .form-select {
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bp-field .form-control:focus,
+.bp-field .form-select:focus {
+  border-color: var(--brass);
+  box-shadow: 0 0 0 3px rgba(184,134,59,0.15);
+  outline: none;
+  background: var(--paper-raised);
+}
+
+.bp-field .form-hint {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+}
+
+.bp-submit {
+  width: 100%;
+  background: var(--brass);
+  border: none;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9px;
+  margin-top: 1.75rem;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.bp-submit:hover { background: var(--brass-deep); color: #fff; }
+.bp-submit:active { transform: translateY(1px); }
+
+/* -------------------------------------------------------------------- */
+/* Result page                                                           */
+/* -------------------------------------------------------------------- */
+
+.bp-back-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #CBD8DC;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 7px;
+  padding: 0.4rem 0.9rem;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.bp-back-link:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+.bp-empty {
+  background: #fff;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+}
+
+.survey-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.35rem 1.35rem 1.15rem;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  height: 100%;
+}
+
+.survey-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px -18px rgba(27,58,75,0.35);
+  border-color: var(--brass);
+}
+
+.survey-rank {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+}
+
+.survey-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0.15rem 0 0.3rem;
+  line-height: 1.3;
+  padding-right: 3.5rem;
+}
+
+.survey-location {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.65rem;
+}
+
+.survey-price {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--blueprint);
+  margin-bottom: 0.65rem;
+}
+
+.survey-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+.survey-specs span { display: inline-flex; align-items: center; gap: 0.3rem; }
+.survey-specs svg { flex-shrink: 0; opacity: 0.65; }
+
+.survey-scores {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.01em;
+}
+
+.survey-link {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blueprint);
+  border: 1.5px solid var(--blueprint);
+  border-radius: 7px;
+  padding: 0.4rem 0.85rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.survey-link:hover { background: var(--blueprint); color: #fff; }
+
+/* stamp badge — the signature element */
+.stamp {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 50%;
+  border: 2px solid var(--brass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: rotate(-6deg);
+  background: repeating-conic-gradient(from 0deg, rgba(184,134,59,0.06) 0deg 6deg, transparent 6deg 12deg);
+}
+
+.stamp-value {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--brass-deep);
+  line-height: 1;
+}
+
+.stamp-label {
+  font-family: var(--font-mono);
+  font-size: 0.48rem;
+  letter-spacing: 0.06em;
+  color: var(--brass-deep);
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+/* -------------------------------------------------------------------- */
+/* Responsive                                                            */
+/* -------------------------------------------------------------------- */
+
+@media (max-width: 576px) {
+  .bp-header { padding: 1.6rem 1.5rem 1.35rem; }
+  .bp-form-body { padding: 1.5rem; }
+  .bp-title { font-size: 1.5rem; }
+  .survey-title { padding-right: 3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .survey-card, .bp-submit, .survey-link, .bp-back-link { transition: none; }
+}
